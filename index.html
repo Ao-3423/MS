@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Thailand Macro Business Simulation 2026</title>
+
+    <link rel="icon" href="logo/LOGO-MS.png" />
+
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+        background: #f3f8ff;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header img {
+        width: 90px;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      /* search */
+
+      .searchBox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .searchBox input {
+        flex: 1;
+        min-width: 180px;
+        padding: 14px;
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        font-size: 16px; /* กัน iPhone zoom */
+      }
+
+      /* table scroll mobile */
+
+      .tableWrapper {
+        overflow-x: auto;
+      }
+
+      /* table */
+
+      table {
+        width: 100%;
+        min-width: 600px;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      th {
+        background: #48a8fc;
+        color: white;
+        padding: 12px;
+        text-align: left;
+      }
+
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+      }
+
+      tr:hover {
+        background: #f4f8ff;
+      }
+
+      /* mobile */
+
+      @media (max-width: 500px) {
+        .title {
+          font-size: 18px;
+        }
+
+        body {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="logo/LOGO-MS.png" />
+        <div class="title">Thailand Macro Business Simulation 2026</div>
+      </div>
+
+      <div class="searchBox">
+        <input
+          type="text"
+          id="teamSearch"
+          placeholder="Search Team Name..."
+          onkeyup="filterTable()"
+        />
+
+        <input
+          type="text"
+          id="uniSearch"
+          placeholder="Search University..."
+          onkeyup="filterTable()"
+        />
+
+        <input
+          type="text"
+          id="groupSearch"
+          placeholder="Search Group..."
+          onkeyup="filterTable()"
+        />
+
+        <input
+          type="text"
+          id="roomSearch"
+          placeholder="Search Room..."
+          onkeyup="filterTable()"
+        />
+      </div>
+
+      <div class="tableWrapper">
+        <table id="teamTable">
+          <thead>
+            <tr>
+              <th>Team Name</th>
+              <th>University</th>
+              <th>Group</th>
+              <th>Room</th>
+            </tr>
+          </thead>
+
+          <!--Room 28601-->
+          <tbody>
+            <tr>
+              <td>Dai na</td>
+              <td>Kasetsart University</td>
+              <td>A</td>
+              <td>28601</td>
+            </tr>
+
+            <tr>
+              <td>STCBizclub</td>
+              <td>Siam Technology College</td>
+              <td>A</td>
+              <td>28601</td>
+            </tr>
+
+            <tr>
+              <td>Diva</td>
+              <td>Kasetsart University Sriracha Campus</td>
+              <td>B</td>
+              <td>28601</td>
+            </tr>
+
+            <tr>
+              <td>HopelesslyDevoted</td>
+              <td>Chiang Mai University</td>
+              <td>C</td>
+              <td>28601</td>
+            </tr>
+
+            <tr>
+              <td>Eager bird</td>
+              <td>Silpakorn University</td>
+              <td>D</td>
+              <td>28601</td>
+            </tr>
+
+            <tr>
+              <td>MountainPenguin</td>
+              <td>Prince of Songkla University</td>
+              <td>D</td>
+              <td>28601</td>
+            </tr>
+
+            <!--Room 28602-->
+            <tr>
+              <td>Trader</td>
+              <td>Kasetsart University Sriracha Campus</td>
+              <td>A</td>
+              <td>28602</td>
+            </tr>
+
+            <tr>
+              <td>Sartorius</td>
+              <td>Silpakorn University</td>
+              <td>B</td>
+              <td>28602</td>
+            </tr>
+
+            <tr>
+              <td>แชมป์มานี่มา</td>
+              <td>Srinakharinwirot University</td>
+              <td>C</td>
+              <td>28602</td>
+            </tr>
+
+            <tr>
+              <td>Nobody’s business</td>
+              <td>The University of the Thai Chamber of Commerce</td>
+              <td>C</td>
+              <td>28602</td>
+            </tr>
+
+            <tr>
+              <td>Bibimbap</td>
+              <td>Chulalongkorn University</td>
+              <td>D</td>
+              <td>28602</td>
+            </tr>
+
+            <tr>
+              <td>skinbangkhen</td>
+              <td>Kasetsart University</td>
+              <td>D</td>
+              <td>28602</td>
+            </tr>
+
+            <!--Room 28605-->
+            <tr>
+              <td>Dm diwa</td>
+              <td>The University of the Thai Chamber of Commerce</td>
+              <td>A</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>MacroDIVA</td>
+              <td>Assumption University</td>
+              <td>A</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>Trio Solution</td>
+              <td>Thaksin University</td>
+              <td>A</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>ฝากถามเจมส์ที</td>
+              <td>Srinakharinwirot University</td>
+              <td>B</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>DCM IC</td>
+              <td>Burapha University</td>
+              <td>B</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>Godslayer</td>
+              <td>Shinawatra University</td>
+              <td>B</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>Vertex</td>
+              <td>Chiang Mai University</td>
+              <td>B</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>Econlnwza007X</td>
+              <td>Walailak University</td>
+              <td>C</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>KU Com Sci</td>
+              <td>Kasetsart University</td>
+              <td>C</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>MARZY</td>
+              <td>Kasetsart University Sriracha Campus</td>
+              <td>C</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>2vs100</td>
+              <td>Silpakorn University</td>
+              <td>D</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>Beyond Frontier</td>
+              <td>Rajamangala University of Technology Thanyaburi</td>
+              <td>D</td>
+              <td>28605</td>
+            </tr>
+
+            <tr>
+              <td>Offerpuff</td>
+              <td>Thammasat University</td>
+              <td>D</td>
+              <td>28605</td>
+            </tr>
+
+            <!--Room 28606-->
+            <tr>
+              <td>ABCkids</td>
+              <td>Walailak University</td>
+              <td>A</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>Apex</td>
+              <td>Shinawatra University</td>
+              <td>A</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>KAOMUNKAI</td>
+              <td>Mahidol University</td>
+              <td>A</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>Four Horn</td>
+              <td>Assumption University</td>
+              <td>B</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>IconMode</td>
+              <td>The University of the Thai Chamber of Commerce</td>
+              <td>B</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>MOVE ON</td>
+              <td>King Mongkut’s University of Technology Thonburi</td>
+              <td>B</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>SpinAndSuffer</td>
+              <td>Kasetsart University</td>
+              <td>B</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>Data Divas</td>
+              <td>Chulalongkorn University</td>
+              <td>C</td>
+              <td>28606</td>
+            </tr>
+
+            <tr>
+              <td>Jaroen</td>
+              <td>Silpakorn University</td>
+              <td>C</td>
+              <td>28606</td>
+            </tr>
+
+            <!--Room 28701-->
+            <tr>
+              <td>เป็ดมืด</td>
+              <td>Kasetsart University</td>
+              <td>A</td>
+              <td>28701</td>
+            </tr>
+
+            <tr>
+              <td>Richie</td>
+              <td>Kasetsart University Sriracha Campus</td>
+              <td>A</td>
+              <td>28701</td>
+            </tr>
+
+            <tr>
+              <td>LiuQi</td>
+              <td>Silpakorn University</td>
+              <td>B</td>
+              <td>28701</td>
+            </tr>
+
+            <tr>
+              <td>Dream carrier</td>
+              <td>Srinakharinwirot University</td>
+              <td>C</td>
+              <td>28701</td>
+            </tr>
+
+            <tr>
+              <td>ChangMuangCNX</td>
+              <td>Chiang Mai University</td>
+              <td>D</td>
+              <td>28701</td>
+            </tr>
+
+            <tr>
+              <td>Ko Mai Ru Si Na</td>
+              <td>Khon Kaen University</td>
+              <td>D</td>
+              <td>28701</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function filterTable() {
+        let team = document.getElementById("teamSearch").value.toLowerCase();
+        let uni = document.getElementById("uniSearch").value.toLowerCase();
+        let group = document.getElementById("groupSearch").value.toLowerCase();
+        let room = document.getElementById("roomSearch").value.toLowerCase();
+
+        let table = document.getElementById("teamTable");
+        let tr = table.getElementsByTagName("tr");
+
+        for (let i = 1; i < tr.length; i++) {
+          let tdTeam = tr[i].getElementsByTagName("td")[0];
+          let tdUni = tr[i].getElementsByTagName("td")[1];
+          let tdGroup = tr[i].getElementsByTagName("td")[2];
+          let tdRoom = tr[i].getElementsByTagName("td")[3];
+
+          if (tdTeam) {
+            let teamText = tdTeam.textContent.toLowerCase();
+            let uniText = tdUni.textContent.toLowerCase();
+            let groupText = tdGroup.textContent.toLowerCase();
+            let roomText = tdRoom.textContent.toLowerCase();
+
+            if (
+              teamText.includes(team) &&
+              uniText.includes(uni) &&
+              groupText.includes(group) &&
+              roomText.includes(room)
+            ) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
