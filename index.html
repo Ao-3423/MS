@@ -141,12 +141,7 @@
           onkeyup="filterTable()"
         />
 
-        <input
-          type="text"
-          id="seatSearch"
-          placeholder="Search Seat..."
-          onkeyup="filterTable()"
-        />
+       
       </div>
 
       <div class="tableWrapper">
@@ -157,7 +152,7 @@
               <th>University</th>
               <th>Group</th>
               <th>Room</th>
-              <th>Seat</th>
+  
             </tr>
           </thead>
 
@@ -670,7 +665,6 @@
         let uni = document.getElementById("uniSearch").value.toLowerCase();
         let group = document.getElementById("groupSearch").value.toLowerCase();
         let room = document.getElementById("roomSearch").value.toLowerCase();
-
         let table = document.getElementById("teamTable");
         let tr = table.getElementsByTagName("tr");
 
